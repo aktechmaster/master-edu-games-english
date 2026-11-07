@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#176b5b">
+<title>English Game Hub | Play • Learn • Improve</title>
+<style>
+:root{
+  --ink:#183b36;--muted:#71817d;--green:#176b5b;--green2:#28a889;
+  --yellow:#ffd45c;--blue:#68b9f5;--orange:#ff9b62;--pink:#f48ab0;
+  --paper:#f5fbf8;--white:#fff;--shadow:0 14px 35px rgba(24,72,61,.10)
+}
+*{box-sizing:border-box}
+body{margin:0;font-family:ui-rounded,"Trebuchet MS",system-ui,sans-serif;color:var(--ink);
+ background:radial-gradient(circle at 8% 4%,#fff0bd 0,transparent 23rem),
+ radial-gradient(circle at 95% 16%,#d9f1ff 0,transparent 24rem),var(--paper);min-height:100vh}
+.wrap{width:min(1160px,92%);margin:auto}
+header{padding:34px 0 24px}
+.topline{display:flex;align-items:center;justify-content:space-between;gap:15px}
+.brand{display:flex;align-items:center;gap:12px;font-weight:900;letter-spacing:.04em}
+.brandmark{width:48px;height:48px;border-radius:16px;background:linear-gradient(135deg,var(--green),#35b995);
+ display:grid;place-items:center;color:white;font-size:26px;box-shadow:0 8px 18px #176b5b35}
+.pill{background:#e3f5ee;color:var(--green);padding:9px 14px;border-radius:30px;font-size:12px;font-weight:800}
+.hero{padding:44px 0 34px;text-align:center}
+.eyebrow{display:inline-block;background:#fff;border:1px solid #e8eee9;border-radius:30px;padding:8px 14px;
+ font-size:12px;font-weight:900;color:var(--green);letter-spacing:.12em}
+h1{font-size:clamp(38px,7vw,70px);line-height:1.02;margin:18px 0 12px;letter-spacing:-.055em}
+h1 span{color:var(--green2)}
+.subtitle{margin:0;color:var(--muted);font-size:clamp(15px,2vw,18px)}
+.spark{color:#f2ad20}
+.controls{display:flex;align-items:center;justify-content:space-between;gap:14px;flex-wrap:wrap;margin:16px 0 22px}
+.tabs{display:flex;gap:8px;flex-wrap:wrap}
+.tab{border:0;background:#fff;color:var(--muted);padding:12px 17px;border-radius:14px;font-weight:800;
+ cursor:pointer;box-shadow:0 4px 14px #214d3b0b;transition:.2s}
+.tab.active{background:var(--green);color:#fff;box-shadow:0 8px 18px #176b5b35}
+.search{border:1px solid #e2ece6;background:#fff;border-radius:14px;padding:12px 15px;min-width:min(100%,250px);
+ font:inherit;outline:none}
+.search:focus{border-color:var(--green2);box-shadow:0 0 0 3px #28a88920}
+.section-title{display:flex;align-items:center;justify-content:space-between;margin:24px 2px 15px}
+.section-title h2{font-size:20px;margin:0}
+.count{font-size:12px;color:var(--muted);font-weight:800}
+.grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:18px;padding-bottom:48px}
+.card{position:relative;overflow:hidden;background:#fff;border:1px solid #e9f0eb;border-radius:25px;
+ padding:20px;min-height:220px;display:flex;flex-direction:column;align-items:flex-start;
+ box-shadow:var(--shadow);transition:transform .2s,box-shadow .2s}
+.card:hover{transform:translateY(-5px);box-shadow:0 18px 38px #18483d20}
+.card:before{content:"";position:absolute;width:150px;height:150px;border-radius:50%;right:-55px;top:-60px;background:var(--tint);opacity:.8}
+.game-icon{position:relative;width:78px;height:78px;border-radius:24px;background:var(--tint);display:grid;place-items:center;
+ font-size:43px;margin-bottom:18px;box-shadow:inset 0 -5px 0 #00000008}
+.game-name{font-size:18px;line-height:1.25;font-weight:900;max-width:100%;margin-bottom:12px}
+.mode{font-size:10px;font-weight:900;letter-spacing:.08em;text-transform:uppercase;padding:7px 10px;border-radius:30px;margin-top:auto}
+.mode.smart{background:#e4f6ed;color:#16805f}.mode.projector{background:#e6f2ff;color:#2477b9}
+.play{position:absolute;right:18px;bottom:18px;border:0;background:var(--green);color:#fff;width:42px;height:42px;
+ border-radius:14px;font-size:20px;cursor:pointer;transition:.2s}
+.play:hover{background:#0e5145;transform:scale(1.06)}
+.empty{grid-column:1/-1;text-align:center;padding:45px 15px;color:var(--muted);background:#fff;border-radius:20px}
+footer{text-align:center;padding:8px 0 32px;color:#899792;font-size:12px}
+@media(max-width:900px){.grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:520px){header{padding-top:22px}.topline{align-items:flex-start}.pill{font-size:10px}.hero{padding:34px 0 25px}
+ .controls{align-items:stretch}.tabs{display:grid;grid-template-columns:repeat(3,1fr)}.tab{padding:11px 8px;font-size:12px}
+ .search{width:100%}.grid{gap:12px}.card{padding:15px;min-height:195px;border-radius:20px}
+ .game-icon{width:65px;height:65px;font-size:36px;border-radius:20px}.game-name{font-size:15px}.play{right:13px;bottom:13px;width:37px;height:37px}
+}
+</style>
+</head>
+<body>
+<header class="wrap">
+  <div class="topline">
+    <div class="brand"><div class="brandmark">🎮</div><div>ENGLISH<br>GAME HUB</div></div>
+    <div class="pill">PLAY • LEARN • IMPROVE</div>
+  </div>
+  <section class="hero">
+    <div class="eyebrow">✦ LET'S MAKE LEARNING FUN ✦</div>
+    <h1>Ready, Set, <span>Play!</span></h1>
+    <p class="subtitle">Choose a game and make your English lesson more exciting.</p>
+  </section>
+</header>
+
+<main class="wrap">
+  <div class="controls">
+    <div class="tabs" role="group" aria-label="Filter games">
+      <button class="tab active" data-filter="all">All Games</button>
+      <button class="tab" data-filter="smart">🖐 Smart Board</button>
+      <button class="tab" data-filter="projector">📽 Projector</button>
+    </div>
+    <input class="search" id="search" type="search" placeholder="🔎 Find a game..." aria-label="Find a game">
+  </div>
+  <div class="section-title"><h2>🎯 Choose Your Game</h2><span class="count" id="count">4 GAMES</span></div>
+  <section class="grid" id="games">
+    <article class="card" data-mode="smart" data-name="puzzle finding words">
+      <div class="game-icon" style="--tint:#fff0bd">🧩</div>
+      <div class="game-name">Puzzle Finding Words</div>
+      <span class="mode smart">Smart Board</span>
+      <button class="play" aria-label="Play Puzzle Finding Words" data-url="https://aktechmaster.github.io/puzzle-finding-words/">➜</button>
+    </article>
+    <article class="card" data-mode="smart" data-name="scrambled word sentence">
+      <div class="game-icon" style="--tint:#dff3ff">🔤</div>
+      <div class="game-name">Scrambled Word &amp; Sentence</div>
+      <span class="mode smart">Smart Board</span>
+      <button class="play" aria-label="Play Scrambled Word and Sentence" data-url="https://aktechmaster.github.io/scrambled-word-sentence/">➜</button>
+    </article>
+    <article class="card" data-mode="projector" data-name="english spinner game">
+      <div class="game-icon" style="--tint:#ffe3ed">🎡</div>
+      <div class="game-name">English Spinner Game</div>
+      <span class="mode projector">Projector Mode</span>
+      <button class="play" aria-label="Play English Spinner Game" data-url="https://aktechmaster.github.io/english-spinner-game/">➜</button>
+    </article>
+    <article class="card" data-mode="smart" data-name="tug of war english game">
+      <div class="game-icon" style="--tint:#e3edff">🪢</div>
+      <div class="game-name">Tug of War English Game</div>
+      <span class="mode smart">Smart Board</span>
+      <button class="play" aria-label="Play Tug of War English Game" data-url="https://aktechmaster.github.io/tug-of-war-english-game/">➜</button>
+    </article>
+  </section>
+</main>
+<footer class="wrap">Made for fun English learning ✦ English Game Hub</footer>
+<script>
+const tabs=[...document.querySelectorAll('.tab')];
+const cards=[...document.querySelectorAll('.card')];
+const search=document.getElementById('search');
+let filter='all';
+function update(){
+  const q=search.value.trim().toLowerCase();let shown=0;
+  cards.forEach(card=>{
+    const matchMode=filter==='all'||card.dataset.mode===filter;
+    const matchText=card.dataset.name.includes(q);
+    card.hidden=!(matchMode&&matchText);if(!card.hidden)shown++;
+  });
+  document.getElementById('count').textContent=shown+' GAME'+(shown===1?'':'S');
+  let empty=document.querySelector('.empty');
+  if(shown===0&&!empty){empty=document.createElement('div');empty.className='empty';empty.textContent='No games found. Try another search.';document.getElementById('games').appendChild(empty)}
+  if(shown>0&&empty)empty.remove();
+}
+tabs.forEach(tab=>tab.addEventListener('click',()=>{
+  tabs.forEach(t=>t.classList.toggle('active',t===tab));filter=tab.dataset.filter;update();
+}));
+search.addEventListener('input',update);
+document.querySelectorAll('.play').forEach(button=>button.addEventListener('click',()=>{
+  window.open(button.dataset.url,'_blank','noopener,noreferrer');
+}));
+</script>
+</body>
+</html>
